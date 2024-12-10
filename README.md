@@ -6,6 +6,7 @@ You need to have **ocaml(>=5.2)** and **dune** pre-installed.
 ```bash
 git clone https://github.com/Debajyati/textsearch
 cd textsearch
+dune build
 dune install
 ```
 # Usage
