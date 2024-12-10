@@ -1,5 +1,5 @@
 # textsearch
-basic cli created only for the purpose of learning ocaml
+basic cli created for searching text in file (only for the purpose of learning OCaml)
 
 # Installation
 You need to have **ocaml(>=5.2)** and **dune** pre-installed.
