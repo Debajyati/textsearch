@@ -10,7 +10,7 @@ let search_in_file ~case_sensitive ~consider_order term file =
     if case_sensitive then s else String.lowercase_ascii s
   in
   let term = normalize term in
-  let term_sorted = List.sort compare (String.to_seq term |> List.of_seq) in
+  (*let term_sorted = List.sort compare (String.to_seq term |> List.of_seq) in*)
 
   let contains_term line =
     let line = normalize line in
@@ -26,8 +26,9 @@ let search_in_file ~case_sensitive ~consider_order term file =
         check_substring 0
       with _ -> false
     else
-      let line_sorted = List.sort compare (String.to_seq line |> List.of_seq) in
-      List.exists (fun sublist -> sublist = term_sorted) (subsequences line_sorted)
+      let term_chars = String.to_seq term |> List.of_seq in
+      let line_chars = String.to_seq line |> List.of_seq in
+      List.for_all (fun c -> List.mem c line_chars) term_chars
   in
 
   let ic = open_in file in
