@@ -1,10 +1,3 @@
-let rec subsequences lst =
-  match lst with
-  | [] -> [[]]
-  | x :: xs ->
-      let subs = subsequences xs in
-      subs @ List.map (fun sub -> x :: sub) subs
-
 let search_in_file ~case_sensitive ~consider_order term file =
   let normalize s =
     if case_sensitive then s else String.lowercase_ascii s

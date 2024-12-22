@@ -31,7 +31,7 @@ let run case_sensitive consider_order term file =
 let cmd =
   let info =
     Cmd.info "textsearch"
-      ~version:"0.2.1"
+      ~version:"0.2.2"
       ~doc:"Search for a term in a file with options for case sensitivity and character order"
   in
   Cmd.v info
